@@ -1,6 +1,6 @@
 <script setup>
 // This starter template is using Vue 3 <script setup> SFCs
-import todo from './components/todoItem.vue'
+import TodoItem from './components/todoItem.vue';
 
 
 function todoItem(done=false, content='', children=[]) {
@@ -25,10 +25,10 @@ const todoList = [
   <div 
   class="flex flex-col w-full items-center p-4"
   >
-    <todo 
+    <TodoItem 
     v-for="item in todoList"
     :key="(Math.random().toString(36).substring(2))"
-    :todo="item"
+    v-bind="item"
     />
   </div>
 </template>
