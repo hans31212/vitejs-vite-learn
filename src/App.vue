@@ -2,6 +2,7 @@
 // This starter template is using Vue 3 <script setup> SFCs
 import todo from './components/todoItem.vue'
 
+
 function todoItem(done=false, content='', children=[]) {
   return {
     "done" : done,
@@ -26,7 +27,7 @@ const todoList = [
   >
     <todo 
     v-for="item in todoList"
-    :key="item.id"
+    :key="(Math.random().toString(36).substring(2))"
     :todo="item"
     />
   </div>
